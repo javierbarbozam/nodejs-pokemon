@@ -7,7 +7,7 @@ function getTeamMember(id) {
     .get(`${url}${id}`)
     .then((response) => {
       const value = response.data;
-      console.log(`Nombre: ${value.name}, id: ${value.id}`)
+      console.log(`Name: ${value.name}, id: ${value.id}`)
     })
     .catch((error) => {
       console.error(error);
@@ -21,7 +21,7 @@ function randomId(min, max) {
 }
 
 function pokemonTeam() {
-  console.log('Tu equipo es:')
+  console.log('Your team is:')
   for (let i = 0; i <= 5; i++) {
     getTeamMember(randomId(1, pokemonCount));
   }
