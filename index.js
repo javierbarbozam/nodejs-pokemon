@@ -1,10 +1,12 @@
 const pokemon20Names = require('./ejercicioUno');
 const pokemonSearchName = require('./ejercicioDos');
-const pokemonTeam = require('./ejercicioTres')
+const pokemonTeam = require('./ejercicioTres');
+const pokemonMoves = require('./ejercicioCuatro');
 
 let readlineSync = require('readline-sync');
-//let question = readlineSync.question('Insert a pokemon name: ');
+let question = readlineSync.question('Insert a pokemon name: ');
 
-// pokemon20Names();
-//pokemonSearchName(question)
+pokemon20Names();
+pokemonSearchName(question)
 pokemonTeam()
+pokemonMoves(question)

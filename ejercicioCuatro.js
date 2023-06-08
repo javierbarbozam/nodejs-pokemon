@@ -1,11 +1,12 @@
 const axios = require('axios');
 const url = 'https://pokeapi.co/api/v2/pokemon/';
 
-function pokemonSearchName(name){
+function pokemonMoves(name){
   axios
   .get(`${url}${name}`)
   .then(response => {
     const value = response.data
+    //console.log(value)
     pokemonInfo(value)
   })
   .catch(error => {
@@ -14,17 +15,13 @@ function pokemonSearchName(name){
 }
 
 function pokemonInfo(result){
-  const info = {
-    name: result.name,
-    height: result.height,
-    weight: result.weight,
-    type: []
-  }
+  const info = [];
+
   
-  result.types.forEach(element => {
-    info.type.push(element.type.name)
+  result.moves.forEach(element => {
+    info.push(element.move.name)
   })
   console.log(info)
 }
 
-module.exports = pokemonSearchName;
+module.exports = pokemonMoves;
